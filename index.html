@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TADG — TikTok Developers | Automated Clip Download Generator</title>
+  <meta name="description" content="TADG (TikTok Automated Download Generator) — página para desarrolladores: documentación, términos, políticas y privacidad." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#f59e0b;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,#071029 0%, #0b1220 100%);color:#e6eef6;line-height:1.45}
+    .container{max-width:1000px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#111827,var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700;color:#081125}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:0.95rem}
+    nav a:hover{color:var(--accent)}
+
+    .hero{background:var(--card);padding:22px;border-radius:14px;box-shadow:0 6px 20px rgba(2,6,23,0.6);display:flex;gap:18px;align-items:center}
+    .hero .title{font-size:1.35rem;font-weight:700;margin:0}
+    .hero p{margin:6px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .card h3{margin:0 0 10px}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:600;font-size:0.85rem}
+    pre{background:#071229;padding:12px;border-radius:8px;overflow:auto;color:#dbeafe}
+
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    @media (max-width:920px){
+      .grid{grid-template-columns:1fr}
+      .container{padding:14px}
+      .hero{flex-direction:column;align-items:flex-start}
+      .logo{width:48px;height:48px}
+    }
+
+    .legal{white-space:pre-wrap;color:var(--muted)}
+    .cta{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#fbbf24);color:#071125;font-weight:700;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">TADG</div>
+        <div>
+          <div style="font-weight:700">TADG</div>
+          <div class="muted" style="font-size:0.85rem">TikTok Automated Download Generator — Developer Hub</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#docs">Docs</a>
+        <a href="terms.html">Terms</a>
+        <a href="policies.html">Policies</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div style="flex:1">
+        <h1 class="title">TADG — Developer Hub</h1>
+        <p class="muted">Recursos profesionales, documentación y textos legales listos para publicar en GitHub Pages. Esta página describe la arquitectura conceptual de un generador de descarga automatizada de clips.</p>
+      </div>
+      <div style="text-align:right">
+        <div class="badge">Acronym: <strong style="color:var(--accent);margin-left:6px">TADG</strong></div>
+        <div style="height:8px"></div>
+        <a class="cta" href="#docs">Ver documentación</a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <main>
+        <article class="card" id="about">
+          <h2>About</h2>
+          <p class="muted">TADG (TikTok Automated Download Generator) es una plantilla profesional para desarrolladores. No provee herramientas ilegales ni de scraping — solo estructura de documentación y legales.</p>
+        </article>
+
+        <article class="card" id="docs" style="margin-top:12px">
+          <h2>Developer docs (conceptual)</h2>
+          <p class="muted">API conceptual para integración segura y legal.</p>
+
+          <h3>API Mock</h3>
+          <pre>GET /api/v1/clips/info?id={clipId}
+Response: { id, author, title, duration }
+
+POST /api/v1/clips/request-download
+Payload: { clipId, format: \"mp4\" }
+
+GET /api/v1/clips/download/{requestId}
+Response: 302 → signed temporary URL
+</pre>
+        </article>
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3>Quick links</h3>
+          <p class="muted">Sube este archivo como <code>index.html</code> en tu GitHub Pages.</p>
+          <a class="cta" href="privacy.html">Ver política de privacidad</a>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Contact</h3>
+          <p class="muted">Mantenedor: Project Maintainer</p>
+          <p class="muted">Email: maintainer@example.com</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 TADG — TikTok Automated Download Generator |
+      <a href="terms.html" style="color:var(--muted)">Terms</a> •
+      <a href="privacy.html" style="color:var(--muted)">Privacy</a>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href^=\"#\"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const hash = a.getAttribute('href');
+        if(hash.length>1){
+          e.preventDefault();
+          const el = document.querySelector(hash);
+          if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    })
+  </script>
+</body>
+</html>
